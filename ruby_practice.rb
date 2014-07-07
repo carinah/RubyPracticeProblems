@@ -15,29 +15,29 @@
 
 # PROBLEM 2: merge and sort two already sorted arrays into a new array. 
 
-arr1 = [9]
-arr2 = [4]
-count1 = 0
-count2 = 0 
-new_arr =[]
+# arr1 = [9]
+# arr2 = [4]
+# count1 = 0
+# count2 = 0 
+# new_arr =[]
 
-while count1 < arr1.length or count2 < arr2.length
-  if count1 == arr1.length
-    new_arr << arr2[count2]
-    count2 += 1
-  elsif count2 == arr2.length 
-    new_arr << arr1[count1]
-    count1 += 1
-  elsif arr1[count1] <= arr2[count2]
-    new_arr << arr1[count1]
-    count1 += 1
-  elsif arr2[count2] < arr1[count1]
-    new_arr << arr2[count2]
-    count2 += 1 
-  end 
-end  
+# while count1 < arr1.length or count2 < arr2.length
+#   if count1 == arr1.length
+#     new_arr << arr2[count2]
+#     count2 += 1
+#   elsif count2 == arr2.length 
+#     new_arr << arr1[count1]
+#     count1 += 1
+#   elsif arr1[count1] <= arr2[count2]
+#     new_arr << arr1[count1]
+#     count1 += 1
+#   elsif arr2[count2] < arr1[count1]
+#     new_arr << arr2[count2]
+#     count2 += 1 
+#   end 
+# end  
 
-puts new_arr.inspect
+# puts new_arr.inspect
 
 # Attempt at sorting algorithm 
 
@@ -51,6 +51,29 @@ puts new_arr.inspect
 # end 
 
 # PROBLEM 3: Check if word is a palindrome. 
+require 'pry'
+
+
+def isPalindrome?(word) 
+  i = 0 
+  m = false 
+
+  while i < word.length / 2 
+    if word[i] == word[word.length - i - 1]
+      i += 1
+    else
+      m = true
+      puts "not a palindrome"
+      break
+    end
+  end 
+  unless m 
+    puts "is a palindrome"
+  end 
+end 
+
+isPalindrome?("abbza")
+
 
 
 
