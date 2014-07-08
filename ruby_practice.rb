@@ -54,27 +54,57 @@
 require 'pry'
 
 
-def isPalindrome?(word) 
-  i = 0 
-  m = false 
+# def isPalindrome?(word) 
+#   i = 0 
+#   m = false 
 
-  while i < word.length / 2 
-    if word[i] == word[word.length - i - 1]
-      i += 1
-    else
-      m = true
-      puts "not a palindrome"
-      break
-    end
-  end 
-  unless m 
-    puts "is a palindrome"
-  end 
-end 
+#   while i < word.length / 2 
+#     if word[i] == word[word.length - i - 1]
+#       i += 1
+#     else
+#       m = true
+#       puts "not a palindrome"
+#       break
+#     end
+#   end 
+#   unless m 
+#     puts "is a palindrome"
+#   end 
+# end 
 
-isPalindrome?("abbza")
+# Problem 4: Reverse an array of numbers. 
+
+# def reverseArray(array) 
+#   i = 0
+
+#   while i < array.length / 2
+#     m = array.insert(array.length-1-i, array[i])
+#     m.delete_at(i)
+#     m = array.insert(i, array[array.length-1-i])
+#     m.delete_at(array.length-1-i)
+#     i += 1
+#   end
+#   puts array.inspect
+# end
 
 
+# reverseArray([1,2,3,4])
+
+
+def reverseArray(array) 
+  i = 0
+
+  while i < array.length / 2
+    temp = array[i]
+    array[i] = array[array.length - i - 1]
+    array[array.length - i - 1] = temp
+    i += 1
+  end
+  puts array.inspect
+end
+
+
+reverseArray([1,2,3,4])
 
 
 
